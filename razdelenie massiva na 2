@@ -1,0 +1,29 @@
+package com.javarush.task.task07.task0705;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+      BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int[]pol1=new int[10];
+        int[]pol2=new int[10];
+        
+        int[]big = new int[20];
+        for (int i=0;i<big.length;i++){
+            String s = reader.readLine();
+           big[i]=Integer.parseInt(s);
+           }
+           
+           for (int i=0;i<pol1.length;i++){
+           pol1[i]=big[i];}
+    
+           for (int i=0;i<pol2.length;i++){
+           pol2[i]=big[i+10];
+               System.out.println(pol2[i]); }
+           
+           
+           
+           }
+    }
