@@ -1,0 +1,63 @@
+public class Solution {
+    public static void main(String[] args) {
+        Human stas=new Human("stas",true,12);
+        System.out.println(stas);
+        Human boris=new Human("boris",true,34);
+        System.out.println(boris);
+        Human liza=new Human("liza",false,28);
+        System.out.println(liza);
+        Human katya=new Human("katya",false,30);
+        System.out.println(katya);
+        Human gosha=new Human("gosha",true,34, boris,katya);
+        System.out.println(gosha);
+        Human youra=new Human("youra",true,29, stas,liza);
+        System.out.println(youra);
+        Human lera=new Human("lera",false,30, boris,katya);
+        System.out.println(lera);
+        Human arina=new Human("arina",false,29, stas,liza);
+        System.out.println(arina);
+        Human sasha=new Human("sasha",true,33, stas,katya);
+        System.out.println(sasha);
+        // напишите тут ваш код
+    }
+
+    public static class Human {
+        String name;
+        boolean sex;
+        int age;
+        Human father;
+        Human mother;
+       
+        public Human(String name,boolean sex,int age){
+           this.name=name;
+           this.sex=sex;
+           this.age=age;
+       }
+        public Human(String name,boolean sex,int age,Human father, Human mother){
+           this.name=name;
+           this.sex=sex;
+           this.age=age;
+           this.father=father;
+           this.mother=mother;
+       }
+        
+        
+
+        public String toString() {
+            String text = "";
+            text += "Имя: " + this.name;
+            text += ", пол: " + (this.sex ? "мужской" : "женский");
+            text += ", возраст: " + this.age;
+
+            if (this.father != null) {
+                text += ", отец: " + this.father.name;
+            }
+
+            if (this.mother != null) {
+                text += ", мать: " + this.mother.name;
+            }
+
+            return text;
+        }
+    }
+}
